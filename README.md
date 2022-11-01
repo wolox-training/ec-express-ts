@@ -48,6 +48,9 @@ DB_PASSWORD="project_name"
 DB_NAME="db_project_name"
 DB_NAME_DEV="db_project_name_dev"
 DB_NAME_TEST="db_project_name_test"
+URL="your_API_URL"
+API_KEY="your_API_Key"
+API_HOST="your_API_Host"
 ```
 
 ### Migrations

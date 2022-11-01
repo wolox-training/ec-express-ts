@@ -4,7 +4,7 @@ export class UserModel1574858958271 implements MigrationInterface {
   public up(queryRunner: QueryRunner): Promise<void> {
     return queryRunner.createTable(
       new Table({
-        name: 'User',
+        name: 'user',
         columns: [
           { name: 'id', type: 'int', isPrimary: true, generationStrategy: 'increment', isGenerated: true },
           { name: 'username', type: 'varchar' }

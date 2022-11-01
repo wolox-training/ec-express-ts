@@ -41,16 +41,16 @@ Before running the app, make sure you have [postgresql installed](https://www.di
 Then, set in `.env` file following variables:
 
 ```
-DB_HOST=localhost
+DB_HOST="localhost"
 DB_PORT=5432
-DB_USERNAME=hearthstone
-DB_PASSWORD=hearthstone
-DB_NAME=db_ts_training
-DB_NAME_DEV=db_ts_training
-DB_NAME_TEST=db_ts_training
-URL=https://omgvamp-hearthstone-v1.p.rapidapi.com
-API_KEY=63b0a84fe4msh3b616677ff69940p16f35ajsn1780a62f489f
-API_HOST=omgvamp-hearthstone-v1.p.rapidapi.com
+DB_USERNAME="project_name"
+DB_PASSWORD="project_name"
+DB_NAME="db_project_name"
+DB_NAME_DEV="db_project_name_dev"
+DB_NAME_TEST="db_project_name_test"
+URL="your_API_URL"
+API_KEY="your_API_Key"
+API_HOST="your_API_Host"
 ```
 
 ### Migrations

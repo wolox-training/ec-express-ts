@@ -7,7 +7,10 @@ export class UserModel1574858958271 implements MigrationInterface {
         name: 'user',
         columns: [
           { name: 'id', type: 'int', isPrimary: true, generationStrategy: 'increment', isGenerated: true },
-          { name: 'username', type: 'varchar' }
+          { name: 'username', type: 'varchar' },
+          { name: 'lastname', type: 'varchar' },
+          { name: 'email', type: 'varchar' },
+          { name: 'password', type: 'varchar' },
         ]
       })
     );

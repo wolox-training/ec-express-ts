@@ -51,7 +51,7 @@ DB_NAME_TEST="db_project_name_test"
 URL="your-api-url"
 API_KEY="your-api-key"
 API_HOST="your-api-host"
-```
+
 
 ### Migrations
 

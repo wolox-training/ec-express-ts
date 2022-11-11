@@ -24,7 +24,7 @@ describe('users', () => {
     it('should create an user', (done: jest.DoneCallback) => {
       request(app)
         .post('/users')
-        .send({ username: 'u3' })
+        .send({ firstName: 'u3', lastName: 'u3', email: 'u3', password: 'u3' })
         .expect(201)
         .then(async () => {
           const user = await userRepository.findUser({ firstName: 'u3' });
@@ -38,8 +38,11 @@ describe('users', () => {
           .get('/users/1')
           .expect(200)
           .then((res: request.Response) => {
-            expect(res.body).toHaveProperty('username');
+            expect(res.body).toHaveProperty('firstName');
             expect(res.body).toHaveProperty('id');
+            expect(res.body).toHaveProperty('lastName');
+            expect(res.body).toHaveProperty('email');
+            expect(res.body).toHaveProperty('password');
             done();
           });
       });

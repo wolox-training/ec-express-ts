@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import HttpStatus from 'http-status-codes';
+import bcrypt from 'bcryptjs';
 
 import userService from '../services/users';
 import { User } from '../models/user';
@@ -13,11 +14,13 @@ export function getUsers(req: Request, res: Response, next: NextFunction): Promi
 }
 
 export function createUser(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
+  const cryptPassword = bcrypt.hashSync(req.body.password, Number(10));
   return userService
     .createAndSave({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      email: req.body.emal
+      email: req.body.email,
+      password: cryptPassword
     } as User)
     .then((user: User) => res.status(HttpStatus.CREATED).send({ user }))
     .catch(next);

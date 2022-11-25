@@ -4,6 +4,7 @@ import HttpStatus from 'http-status-codes';
 import userService from '../services/users';
 import { User } from '../models/user';
 import { notFoundError } from '../errors';
+import parser from '../helpers/parser';
 
 export function getUsers(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
   return userService
@@ -12,12 +13,14 @@ export function getUsers(req: Request, res: Response, next: NextFunction): Promi
     .catch(next);
 }
 
-export function createUser(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
+export async function createUser(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
+  const cryptPassword = await parser.passwordParser(req.body.password);
   return userService
     .createAndSave({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      email: req.body.emal
+      email: req.body.email,
+      password: cryptPassword
     } as User)
     .then((user: User) => res.status(HttpStatus.CREATED).send({ user }))
     .catch(next);

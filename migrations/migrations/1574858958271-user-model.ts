@@ -4,7 +4,7 @@ export class UserModel1574858958271 implements MigrationInterface {
   public up(queryRunner: QueryRunner): Promise<void> {
     return queryRunner.createTable(
       new Table({
-        name: 'User',
+        name: 'user',
         columns: [
           { name: 'id', type: 'int', isPrimary: true, generationStrategy: 'increment', isGenerated: true },
           { name: 'firstName', type: 'varchar' },
@@ -17,6 +17,6 @@ export class UserModel1574858958271 implements MigrationInterface {
   }
 
   public down(queryRunner: QueryRunner): Promise<void> {
-    return queryRunner.dropTable('User');
+    return queryRunner.dropTable('user');
   }
 }

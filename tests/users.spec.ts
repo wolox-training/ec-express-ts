@@ -5,8 +5,8 @@ import app from '../app';
 describe('users', () => {
   beforeEach(() =>
     userRepository.createMany([
-      { firstName: 'u1', lastName: 'u1', email: 'u1', password: 'u1' },
-      { firstName: 'u2', lastName: 'u2', email: 'u2', password: 'u2' }
+      { firstName: 'u1', lastName: 'u1', email: 'u1@wolox.com', password: 'u1111111' },
+      { firstName: 'u2', lastName: 'u2', email: 'u2@wolox.com', password: 'u2222222' }
     ])
   );
   describe('/users GET', () => {
@@ -24,7 +24,7 @@ describe('users', () => {
     it('should create an user', (done: jest.DoneCallback) => {
       request(app)
         .post('/users')
-        .send({ firstName: 'u3', lastName: 'u3', email: 'u3', password: 'u3' })
+        .send({ firstName: 'u3', lastName: 'u3', email: 'u3@wolox.com', password: 'u3333333' })
         .expect(201)
         .then(async () => {
           const user = await userRepository.findUser({ firstName: 'u3' });

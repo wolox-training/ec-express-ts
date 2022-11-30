@@ -14,7 +14,7 @@ export function getUsers(req: Request, res: Response, next: NextFunction): Promi
 }
 
 export async function createUser(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
-  const cryptPassword = await parser.passwordParser(req.body.password);
+  const cryptPassword = await parser.hashPassword(req.body.password);
   return userService
     .createAndSave({
       firstName: req.body.firstName,

@@ -5,8 +5,8 @@ import app from '../app';
 describe('users', () => {
   beforeEach(() =>
     userRepository.createMany([
-      { firstName: 'u1', lastName: 'u1', email: 'u1@wolox.com', password: 'u1111111' },
-      { firstName: 'u2', lastName: 'u2', email: 'u2@wolox.com', password: 'u2222222' }
+      { firstName: 'u11', lastName: 'u11', email: 'u1@wolox.com', password: 'u1111111' },
+      { firstName: 'u22', lastName: 'u22', email: 'u2@wolox.com', password: 'u2222222' }
     ])
   );
   describe('/users GET', () => {

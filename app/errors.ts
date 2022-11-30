@@ -4,6 +4,9 @@ import { HTTP_CODES } from './constants';
 export const AUTHENTICATION_ERROR = 'authentication_error';
 export const authenticationError = createInternalError(AUTHENTICATION_ERROR, HTTP_CODES.UNAUTHORIZED);
 
+export const PARAMETERS_ERROR = 'parameters_error';
+export const parametersError = createInternalError(AUTHENTICATION_ERROR, HTTP_CODES.BAD_REQUEST);
+
 export const DATABASE_ERROR = 'database_error';
 export const databaseError = createInternalError(DATABASE_ERROR, HTTP_CODES.SERVICE_UNAVAILABLE);
 
